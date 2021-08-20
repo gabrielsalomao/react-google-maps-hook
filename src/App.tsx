@@ -38,9 +38,10 @@ const App: React.FC = () => {
     showMarkers,
     deleteMarker,
     deleteMarkers,
+    addPolygon,
     enableClusterer,
     disableClusterer,
-  } = useMaps();
+  } = useMaps({ enableDrawing: true });
 
   useEffect(() => {
     initMap();
@@ -50,7 +51,9 @@ const App: React.FC = () => {
     <div className="App">
       <button
         onClick={() => {
-          locations.forEach((l) => addMarker({ map, position: l }));
+          locations.forEach((l) =>
+            addMarker({ map, position: l, label: "MARCADOR" })
+          );
         }}
       >
         add marker
@@ -62,6 +65,8 @@ const App: React.FC = () => {
       <button onClick={() => deleteMarkers()}>delete markers</button>
       <button onClick={() => enableClusterer()}>enable clusterer</button>
       <button onClick={() => disableClusterer()}>disable clusterer</button>
+      <button onClick={() => addPolygon()}>add polygon</button>
+
       <div
         id="map"
         style={{

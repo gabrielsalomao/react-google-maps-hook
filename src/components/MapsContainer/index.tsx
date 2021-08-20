@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 export const GOOGLE_MAPS_API_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
 const loadGoogleMapsApiScript = (onload: () => void) => {
-  const mapsURL = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&language=pt-Br&region=pt-Br&libraries=places&v=weekly`;
+  const mapsURL = `https://maps.googleapis.com/maps/api/js?key=${GOOGLE_MAPS_API_KEY}&language=pt-Br&region=pt-Br&libraries=places&libraries=drawing&v=weekly`;
   const scripts = document.getElementsByTagName("script");
 
   // verifica se já existe uma tag script do google maps
