@@ -9,6 +9,7 @@ export type MarkerOptions = google.maps.MarkerOptions;
 interface Parameters {
   zoom?: number;
   center?: LatLng;
+  enableDrawing?: boolean;
 }
 
 export const useMaps = (opt?: Parameters) => {
